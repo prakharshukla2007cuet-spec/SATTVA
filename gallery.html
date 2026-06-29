@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | SATTVA</title>
+  <link rel="stylesheet" href="gallery-style.css" />
+</head>
+<body>
+  <!-- logo top left linking to home page -->
+  <a href="index.html" class="logo-link">
+  <img src="logo 1.jpeg" alt="Logo" class="logo-img" />
+</a>
+
+  <header>
+    <h1>Our Gallery</h1>
+    <p>Captured Moments at SATTVA</p>
+  </header>
+<!-- images and videos -->
+  <section class="gallery">
+    <div class="gallery-item"><video src="WhatsApp Video 2025-07-17 at 8.22.30 PM.mp4" controls playsinline alt="Gallery 1" video/></div>
+    <div class="gallery-item"><video src="WhatsApp Video 2025-07-19 at 12.26.57 AM.mp4" controls playsinline alt="Gallery 1" /></div>
+    <div class="gallery-item"><video src="WhatsApp Video 2025-07-19 at 12.24.51 AM.mp4" controls playsinline alt="Gallery 1" /></div>
+    <div class="gallery-item"><video src="WhatsApp Video 2025-07-17 at 8.23.56 PM.mp4" controls playsinline alt="Gallery 2" /></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.47.04 PM.jpeg" alt="Gallery 3" /></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.47.02 PM.jpeg" alt="Gallery 4" /></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.47.01 PM.jpeg" alt="Gallery 5" /></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.59 PM.jpeg" alt="Gallery 6" /></div>
+ <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.57 PM.jpeg" alt="Gallery 7" /></div>
+ <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.54 PM.jpeg" alt="Gallery 8" /></div>
+ <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.51 PM.jpeg" alt="Gallery 9" /></div>
+  <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.49 PM.jpeg" alt="Gallery 10" /></div>
+   <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.47 PM.jpeg" alt="Gallery 11" /></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.45 PM.jpeg" alt="Gallery 12" /></div>
+ <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.44 PM.jpeg" alt="Gallery 13" /></div>
+  <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.41 PM.jpeg" alt="Gallery 14" /></div>
+   <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.38 PM.jpeg" alt="Gallery 15" /></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.36 PM.jpeg" alt="Gallery 16" /></div>
+     <div class="gallery-item"><img src="WhatsApp Image 2025-07-17 at 8.46.33 PM.jpeg" alt="Gallery 17" /></div>
+  </section>
+
+  <!-- Lightbox container -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+<!-- Filter Buttons -->
+  <section class="filter-buttons">
+    <button onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('image')">Images</button>
+    <button onclick="filterGallery('video')">Videos</button>
+  </section>
+
+     <!-- Floating Button -->
+  <div class="fab" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Floating Home Button -->
+  <a href="index.html" class="home-button" title="Back to Home">🏠</a>
+
+  <script src="gallery.js"></script>
+
+   <!-- JS Script -->
+  <script>
+    function filterGallery(type) {
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (type === 'all' || item.classList.contains(type)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function searchGallery() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        const title = item.getAttribute('data-title').toLowerCase();
+        item.style.display = title.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+  
+</body>
+</html>
