@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Success | SATTVA</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0c0c0c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+    }
+
+    .logo-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: url('logo 1.jpeg') no-repeat center center / cover; /* Replace with actual logo path */
+      filter: drop-shadow(0 0 25px #00ffc3) blur(1px);
+      animation: rotateGlow 20s linear infinite;
+      opacity: 0.12;
+    }
+
+    @keyframes rotateGlow {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffc3;
+      text-align: center;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      color: #00ffc3;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00ffc3;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #e0e0e0;
+      margin-bottom: 30px;
+    }
+
+    .home-btn {
+      background: #00ffc3;
+      color: #111;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px #00ffc3;
+    }
+
+    .home-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #00ffc3;
+      background: #00d0aa;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .logo-bg {
+        width: 180px;
+        height: 180px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .content {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-bg"></div>
+
+  <div class="content">
+    <h1>Thank You!</h1>
+    <p>Your form has been submitted successfully.<br>We appreciate your time and interest in SATTVA.</p>
+    <a href="index.html" class="home-btn">Back to Homepage</a>
+  </div>
+</body>
+</html>
