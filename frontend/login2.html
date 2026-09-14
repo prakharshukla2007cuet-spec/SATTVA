@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP Login | SATTVA</title>
+  <script src="api.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="login2.css">
+</head>
+<body>
+  <div class="bg-animation" id="bg"></div>
+
+  <div class="container">
+    <div class="login-logo">
+      <img src="logo 1.jpeg" alt="SATTVA Logo">
+      <span>SATTVA <small>ERP</small></span>
+    </div>
+
+    <h2>Login</h2>
+
+    <p id="formMessage" class="form-message" hidden></p>
+
+    <div class="role-btns">
+      <button id="studentBtn" class="active">Student</button>
+      <button id="instructorBtn">Instructor</button>
+    </div>
+
+    <!-- Student Login Form -->
+    <form id="studentForm" class="active">
+      <label>Student ID <small>(optional, for your reference)</small></label>
+      <input type="text" placeholder="Enter Student ID">
+
+      <label>Email</label>
+      <input type="email" id="studentLoginEmail" placeholder="Enter Email" required>
+
+      <label>Password</label>
+      <input type="password" id="studentLoginPassword" placeholder="Enter Password" required>
+
+      <button type="submit" class="submit">Login</button>
+      <div class="toggle" onclick="showRegister()">New Student? Register here</div>
+    </form>
+
+    <!-- Instructor Login Form -->
+    <form id="instructorForm">
+      <label>Instructor ID <small>(optional, for your reference)</small></label>
+      <input type="text" placeholder="Enter Instructor ID">
+
+      <label>Email</label>
+      <input type="email" id="instructorLoginEmail" placeholder="Enter Email" required>
+
+      <label>Password</label>
+      <input type="password" id="instructorLoginPassword" placeholder="Enter Password" required>
+
+      <button type="submit" class="submit">Login</button>
+      <div class="toggle" onclick="showRegister()">New Instructor? Register here</div>
+    </form>
+
+    <!-- Registration Form -->
+    <form id="registerForm">
+      <label>Full Name</label>
+      <input type="text" id="regFullName" placeholder="Enter Full Name" required>
+
+      <label>Email</label>
+      <input type="email" id="regEmail" placeholder="Enter Email" required>
+
+      <label>Contact Number</label>
+      <input type="tel" id="regPhone" placeholder="Enter Contact Number" required>
+
+      <label>Role</label>
+      <select id="roleSelect" required onchange="toggleRegistrationFields()">
+        <option value="">Select Role</option>
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+      </select>
+
+      <div id="studentFields" style="display:none;">
+        <label>Date of Birth</label>
+        <input type="date">
+
+        <label>Section</label>
+        <input type="text" placeholder="Enter Section">
+
+        <label>Course</label>
+        <input type="text" placeholder="Enter Course">
+
+        <label>College</label>
+        <input type="text" placeholder="Enter College Name">
+      </div>
+
+      <div id="instructorFields" style="display:none;">
+        <label>Subjects</label>
+        <input type="text" placeholder="Enter Subjects You Teach">
+      </div>
+
+      <label>Create Password</label>
+      <input type="password" id="regPassword" placeholder="Enter Password" required>
+      <small class="field-hint">Min. 8 characters, with uppercase, lowercase, a number &amp; a special character (@$!%*?&amp;).</small>
+
+      <button type="submit" class="submit">Register</button>
+      <div class="toggle" onclick="showLogin()">Already have an account? Login</div>
+    </form>
+
+    <a href="index.html" class="back-home">← Back to SATTVA Home</a>
+  </div>
+
+  <script src="login2.js"></script>
+</body>
+</html>

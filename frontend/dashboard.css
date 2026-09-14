@@ -1,0 +1,84 @@
+/* =====================================================
+   SATTVA — ERP DASHBOARD (shared by student/teacher/admin)
+===================================================== */
+
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg, var(--ink) 0%, var(--plum-dark) 100%);
+  color:var(--text-light);
+}
+
+.dash-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px; background:rgba(27,14,35,0.9);
+  border-bottom:1px solid rgba(233,191,22,0.15);
+  position:sticky; top:0; z-index:10;
+}
+.dash-header .logo-container{ display:flex; align-items:center; gap:10px; }
+.dash-header .logo-container img{ width:38px; height:38px; border-radius:50%; border:2px solid var(--gold); object-fit:cover; }
+.dash-header .logo-text{ font-family:var(--font-display); font-weight:700; color:var(--gold); }
+
+.dash-header .user-chip{ display:flex; align-items:center; gap:12px; }
+.dash-header .user-chip .role-pill{
+  font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:700;
+  padding:3px 10px; border-radius:999px; background:rgba(233,191,22,0.15); color:var(--gold-light);
+  border:1px solid rgba(233,191,22,0.3);
+}
+.dash-header .user-chip span.name{ font-weight:600; color:var(--text-light); }
+.logout-btn{
+  padding:8px 16px; border-radius:999px; font-weight:700; font-size:13.5px;
+  background:transparent; border:1.5px solid rgba(233,191,22,0.4); color:var(--text-light);
+  transition:.2s;
+}
+.logout-btn:hover{ background:var(--gold); color:var(--ink); border-color:var(--gold); }
+
+.dash-main{ max-width:1000px; margin:0 auto; padding:32px 20px 60px; }
+
+.dash-welcome h1{ font-size:clamp(1.6rem, 3vw, 2.2rem); margin-bottom:6px; }
+.dash-welcome p{ color:var(--text-muted-light); margin-bottom:28px; }
+
+.dash-loading, .dash-error{
+  padding:16px; border-radius:12px; text-align:center; color:var(--text-muted-light);
+}
+.dash-error{ background:rgba(220,60,60,0.12); border:1px solid rgba(220,60,60,0.35); color:#ffb3b3; }
+
+.stat-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:16px; margin-bottom:32px;
+}
+.stat-card{
+  background:rgba(59,34,69,0.55); border:1px solid rgba(233,191,22,0.15); border-radius:var(--radius-sm);
+  padding:18px; text-align:center;
+}
+.stat-card .stat-num{ font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--gold-light); display:block; }
+.stat-card .stat-label{ font-size:12.5px; color:var(--text-muted-light); text-transform:uppercase; letter-spacing:.05em; }
+
+.dash-card{
+  background:rgba(59,34,69,0.4); border:1px solid rgba(233,191,22,0.12); border-radius:var(--radius);
+  padding:24px; margin-bottom:24px;
+}
+.dash-card h2{ font-size:1.2rem; margin-bottom:16px; color:var(--gold-light); }
+
+.profile-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px 20px; }
+.profile-grid .field-label{ font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted-light); margin-bottom:3px; }
+.profile-grid .field-value{ font-weight:600; }
+
+.edit-form label{ display:block; margin:10px 0 5px; font-size:13.5px; color:var(--text-muted-light); }
+.edit-form input{
+  width:100%; padding:9px; border-radius:8px; border:1px solid rgba(233,191,22,0.2);
+  background:var(--ink-3); color:var(--text-light); font-family:inherit; margin-bottom:6px;
+}
+.edit-form button{
+  margin-top:12px; padding:10px 20px; border-radius:999px; font-weight:700;
+  background:linear-gradient(120deg, var(--gold), var(--plum-light)); color:var(--ink);
+}
+
+table.data-table{ width:100%; border-collapse:collapse; font-size:14px; }
+table.data-table th, table.data-table td{ text-align:left; padding:10px 8px; border-bottom:1px solid rgba(233,191,22,0.12); }
+table.data-table th{ color:var(--gold-light); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+table.data-table td .role-tag{
+  font-size:11px; padding:2px 8px; border-radius:999px; background:rgba(233,191,22,0.15); color:var(--gold-light);
+}
+.table-wrap{ overflow-x:auto; }
+
+.back-home-link{ display:inline-block; margin-top:6px; font-size:0.85rem; color:var(--text-muted-light); }
+.back-home-link:hover{ color:var(--gold); }

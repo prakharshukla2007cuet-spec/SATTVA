@@ -1,0 +1,281 @@
+/* =====================================================
+   SATTVA — SHARED THEME
+   Linked by every page. Colors sampled directly from the
+   SATTVA logo: mustard-gold mark + deep magenta-plum accent.
+   Change a value here and it updates the whole site.
+===================================================== */
+
+:root{
+  /* ---- brand colour (from logo) ---- */
+  --gold: #E9BF16;
+  --gold-light: #F7D454;
+  --gold-dark: #B8940A;
+
+  --plum: #7A326B;
+  --plum-light: #A1317C;
+  --plum-dark: #4E1D42;
+
+  /* ---- supporting colour ---- */
+  --ink: #1B0E23;
+  --ink-2: #2A1730;
+  --ink-3: #3B2245;
+  --paper: #FBF3E7;
+  --paper-2: #F3E4D0;
+  --teal: #1C7C79;
+  --teal-dark: #12514F;
+
+  --text-dark: #241527;
+  --text-muted-dark: #6E5A72;
+  --text-light: #F3E9E0;
+  --text-muted-light: #CBB8CE;
+
+  /* ---- type ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* ---- layout ---- */
+  --max-w: 1180px;
+  --radius: 18px;
+  --radius-sm: 10px;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:90px; }
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--text-dark);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ text-decoration:none; color:inherit; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.12; }
+
+.script{ font-style:italic; font-weight:600; color:var(--gold); }
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  letter-spacing:0.14em;
+  color:var(--gold-dark);
+  margin-bottom:14px;
+  font-weight:700;
+}
+.eyebrow--dark{ color:var(--plum-light); }
+.eyebrow--onDark{ color:var(--gold); }
+
+/* =====================================================
+   Buttons (shared across every page)
+===================================================== */
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:0.95rem;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-primary{ background:var(--gold); color:var(--ink); box-shadow:0 8px 22px rgba(233,191,22,0.35); }
+.btn-primary:hover{ background:var(--gold-dark); transform:translateY(-2px); }
+
+.btn-ghost{ background:transparent; border:2px solid var(--text-light); color:var(--text-light); }
+.btn-ghost:hover{ background:var(--text-light); color:var(--ink); transform:translateY(-2px); }
+
+.btn-dark{ background:var(--ink); color:var(--text-light); }
+.btn-dark:hover{ background:var(--ink-2); transform:translateY(-2px); }
+
+.btn-outline-dark{ background:transparent; border:2px solid var(--ink); color:var(--ink); }
+.btn-outline-dark:hover{ background:var(--ink); color:var(--text-light); transform:translateY(-2px); }
+
+.btn-plum{ background:var(--plum-light); color:#fff; box-shadow:0 8px 22px rgba(161,49,124,0.35); }
+.btn-plum:hover{ background:var(--plum); transform:translateY(-2px); }
+
+/* =====================================================
+   Site logo — reusable brand mark for every page header
+===================================================== */
+.site-logo{ display:flex; align-items:center; gap:10px; }
+.site-logo img{
+  width:42px; height:42px; border-radius:50%; object-fit:cover;
+  border:2px solid var(--gold);
+  animation: logoPulse 4s ease-in-out infinite;
+}
+.site-logo span{
+  font-family:var(--font-display); font-weight:700; font-size:1.4rem;
+  letter-spacing:0.02em;
+}
+@keyframes logoPulse{
+  0%, 100%{ box-shadow:0 0 0 0 rgba(233,191,22,0.35); }
+  50%{ box-shadow:0 0 0 8px rgba(233,191,22,0); }
+}
+
+/* Floating "home" pill used on secondary pages */
+.home-pill{
+  position:fixed; bottom:26px; right:26px; z-index:200;
+  display:flex; align-items:center; gap:8px;
+  background:var(--gold); color:var(--ink); font-weight:700;
+  padding:12px 20px; border-radius:999px; font-size:0.9rem;
+  box-shadow:0 10px 26px rgba(233,191,22,0.4);
+  transition:transform .25s ease, background .25s ease;
+}
+.home-pill:hover{ background:var(--gold-dark); transform:translateY(-3px); }
+
+/* =====================================================
+   Marquee ticker — signature moving strip, reused on
+   every page for rhythm/energy without visual clutter
+===================================================== */
+.marquee{
+  overflow:hidden;
+  background:var(--ink);
+  border-top:1px solid rgba(233,191,22,0.25);
+  border-bottom:1px solid rgba(233,191,22,0.25);
+  white-space:nowrap;
+  padding:14px 0;
+}
+.marquee__track{
+  display:inline-flex;
+  animation: marquee 26s linear infinite;
+}
+.marquee__track span{
+  font-family:var(--font-mono);
+  font-size:0.85rem;
+  letter-spacing:0.12em;
+  color:var(--gold);
+  padding:0 20px;
+}
+.marquee__track span::after{ content:'✦'; color:var(--plum-light); margin-left:20px; }
+@keyframes marquee{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* =====================================================
+   Floating decorative shapes — used behind hero / banner
+   sections for gentle ambient motion
+===================================================== */
+.float-shape{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:0.35;
+  animation: floatY 7s ease-in-out infinite;
+}
+@keyframes floatY{
+  0%, 100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-22px) rotate(8deg); }
+}
+@keyframes floatX{
+  0%, 100%{ transform:translateX(0); }
+  50%{ transform:translateX(18px); }
+}
+@keyframes spinSlow{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+@keyframes gradientShift{
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
+
+/* =====================================================
+   Scroll reveal (shared)
+===================================================== */
+[data-reveal]{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+[data-reveal].is-visible{ opacity:1; transform:translateY(0); }
+
+/* =====================================================
+   Header + nav (identical shell on every page)
+===================================================== */
+.header{
+  position:sticky; top:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 5%;
+  background:rgba(27,14,35,0.72);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(233,191,22,0.15);
+  transition:background .3s ease, padding .3s ease;
+}
+.header.scrolled{ background:rgba(27,14,35,0.96); padding:10px 5%; }
+.header .site-logo span{ color:var(--text-light); }
+
+.navbar{ display:flex; align-items:center; gap:34px; }
+.navbar a{
+  font-weight:600; font-size:0.95rem; color:var(--text-light);
+  position:relative; padding:4px 0;
+}
+.navbar a::after{
+  content:''; position:absolute; left:0; bottom:-3px; height:2px; width:0;
+  background:var(--gold); transition:width .25s ease;
+}
+.navbar a:hover::after{ width:100%; }
+.navbar a.join-mobile{ display:none; }
+
+.cta-button.join-desktop{
+  background:var(--gold); color:var(--ink); font-weight:700;
+  padding:11px 26px; border-radius:999px; font-size:0.9rem;
+  transition:transform .25s ease, background .25s ease;
+}
+.cta-button.join-desktop:hover{ background:var(--gold-dark); transform:translateY(-2px); }
+
+.hamburger{ display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:110; }
+.hamburger span{ width:26px; height:2.5px; background:var(--text-light); border-radius:2px; transition:.3s; }
+
+@media (max-width: 760px){
+  .navbar{
+    position:fixed; top:0; right:-100%; height:100vh; width:78%;
+    background:var(--ink); flex-direction:column; justify-content:center;
+    gap:28px; transition:right .35s ease; z-index:105;
+  }
+  .navbar.show{ right:0; }
+  .navbar a.join-mobile{ display:inline-block; }
+  .hamburger{ display:flex; }
+  .cta-button.join-desktop{ display:none; }
+}
+
+/* =====================================================
+   Footer (identical shell on every page)
+===================================================== */
+.footer-section{ background:#12081A; color:var(--text-muted-light); padding:70px 5% 30px; }
+.footer-section .site-logo{ margin-bottom:14px; }
+.footer-container{
+  max-width:var(--max-w); margin:0 auto;
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:40px;
+}
+.footer-logo{ width:56px; height:56px; border-radius:50%; margin-bottom:14px; border:2px solid var(--gold); }
+.footer-col h3{ color:var(--text-light); font-size:1.05rem; margin-bottom:16px; }
+.footer-col ul li{ margin-bottom:10px; }
+.footer-col ul li a:hover{ color:var(--gold); }
+.newsletter-form{ display:flex; gap:8px; margin-top:14px; }
+.newsletter-form input{
+  flex:1; padding:10px 14px; border-radius:999px; border:1px solid rgba(233,191,22,0.25);
+  background:var(--ink-2); color:var(--text-light);
+}
+.newsletter-form button{ background:var(--gold); color:var(--ink); width:42px; height:42px; border-radius:50%; }
+.footer-bottom{
+  text-align:center; margin-top:50px; padding-top:24px;
+  border-top:1px solid rgba(233,191,22,0.15); font-size:0.85rem;
+}
+
+/* =====================================================
+   Floating action button (scroll-to-top, used on longer pages)
+===================================================== */
+.fab{
+  position:fixed; bottom:26px; left:26px; z-index:200;
+  width:48px; height:48px; border-radius:50%;
+  background:var(--plum-light); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; box-shadow:0 10px 24px rgba(161,49,124,0.4);
+  transition:transform .25s ease, background .25s ease;
+}
+.fab:hover{ background:var(--plum); transform:translateY(-3px); }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  [data-reveal]{ opacity:1; transform:none; transition:none; }
+  .marquee__track, .float-shape, .site-logo img{ animation:none !important; }
+}

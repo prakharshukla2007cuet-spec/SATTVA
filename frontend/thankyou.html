@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You! | SATTVA</title>
+  <script src="api.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="thank-you.css">
+</head>
+<body onload="playSound(); startConfetti();">
+
+  <div class="float-shape t-shape-1" aria-hidden="true"></div>
+  <div class="float-shape t-shape-2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="logo-ring">
+      <img src="logo 1.jpeg" alt="SATTVA Logo" class="logo">
+    </div>
+    <h1 id="thanks-message">Thank you for applying!</h1>
+    <p id="follow-message">We will get back to you shortly.</p>
+
+    <div class="thankyou-actions">
+      <a href="https://whatsapp.com/channel/0029VagD4tl1XqugfLkfaZ0v" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Follow up on WhatsApp
+      </a>
+      <a href="https://instagram.com/ns_sattva" target="_blank" class="instagram-btn">
+        <i class="fab fa-instagram"></i> Follow us on Instagram
+      </a>
+      <a href="index.html" class="btn btn-ghost home-link">Back to Home</a>
+    </div>
+  </div>
+
+  <audio id="successSound" autoplay>
+    <source src="successed-295058.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const role = params.get('role');
+
+    if (role === 'student') {
+      document.getElementById("thanks-message").innerText = "Thank you for joining as a Student!";
+      document.getElementById("follow-message").innerText = "Our team will contact you with learning options soon.";
+    } else if (role === 'instructor') {
+      document.getElementById("thanks-message").innerText = "Thank you for applying as an Instructor!";
+      document.getElementById("follow-message").innerText = "We'll review your profile and contact you.";
+    }
+
+    function playSound() {
+      const audio = document.getElementById("successSound");
+      audio.play().catch(() => { /* autoplay may be blocked; ignore silently */ });
+    }
+
+    function startConfetti() {
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        colors: ['#E9BF16', '#A1317C', '#1C7C79', '#FBF3E7'],
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+</body>
+</html>

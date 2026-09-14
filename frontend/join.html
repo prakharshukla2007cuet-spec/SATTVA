@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Now | SATTVA</title>
+  <script src="api.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="join.css"/>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="siteHeader">
+    <a href="index.html" class="site-logo logo-container">
+      <img src="logo 1.jpeg" alt="SATTVA Logo" />
+      <span class="logo-text">SATTVA</span>
+    </a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html#about">About</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#events">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="login2.html">ERP Login</a>
+    </nav>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>JOIN THE JOURNEY</span><span>ART</span><span>DANCE</span><span>MUSIC</span>
+      <span>JOIN THE JOURNEY</span><span>ART</span><span>DANCE</span><span>MUSIC</span>
+    </div>
+  </div>
+
+  <main class="join-page">
+    <div class="float-shape j-shape-1" aria-hidden="true"></div>
+    <div class="float-shape j-shape-2" aria-hidden="true"></div>
+    <div class="float-shape j-shape-3" aria-hidden="true"></div>
+
+    <div class="join-container">
+      <p class="eyebrow eyebrow--onDark">GET STARTED</p>
+      <h1>Join <span class="script">SATTVA</span></h1>
+      <p class="join-sub">Select your role to get started</p>
+
+      <div class="role-selection">
+        <button type="button" class="active" id="studentBtn" onclick="showForm('student', this)">Join as Student</button>
+        <button type="button" id="instructorBtn" onclick="showForm('instructor', this)">Join as Instructor</button>
+      </div>
+
+      <div class="in-person-note">
+        <i class="fas fa-location-dot"></i>
+        All sessions are conducted <strong>in-person</strong> at our SATTVA studio, Arya Nagar, Kanpur.
+      </div>
+
+      <div class="form-wrapper">
+
+        <!-- Student Form -->
+        <form id="student-form" class="join-form active"
+              action="https://formsubmit.co/ns.sattva1@gmail.com" method="POST">
+          <h2>Book Your Free Session</h2>
+
+          <input type="hidden" name="_next" value="thankyou.html?role=student">
+          <input type="hidden" name="_subject" value="New SATTVA Student Enquiry">
+          <input type="hidden" name="mode" value="In-Person (Offline)">
+
+          <input type="text" name="child_name" placeholder="Name of your Child" required>
+          <input type="tel" name="mobile" placeholder="Your Mobile Number" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="state" placeholder="State / UT" required>
+          <button class="submit-btn" type="submit">Book My Free Session</button>
+        </form>
+
+        <!-- Instructor Form -->
+        <form id="instructor-form" class="join-form"
+              action="https://formsubmit.co/ns.sattva1@gmail.com" method="POST"
+              enctype="multipart/form-data">
+          <h2>Apply as an Instructor</h2>
+
+          <input type="hidden" name="_next" value="success.html?role=instructor">
+          <input type="hidden" name="_subject" value="New SATTVA Instructor Application">
+
+          <input type="text" name="full_name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <input type="text" name="subjects" placeholder="Subjects You Teach" required>
+          <input type="number" name="experience" placeholder="Years of Experience" required min="0">
+          <textarea name="about" placeholder="Tell us about yourself" rows="4" required></textarea>
+
+          <label class="upload-label">Upload Resume (PDF or Word)
+            <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+          </label>
+
+          <button class="submit-btn" type="submit">Submit Application</button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <a href="index.html" class="home-pill" title="Back to Home">
+    <i class="fas fa-house"></i> Home
+  </a>
+
+  <script src="join.js"></script>
+</body>
+</html>

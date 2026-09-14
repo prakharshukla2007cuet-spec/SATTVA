@@ -1,0 +1,70 @@
+/* =====================================================
+   SATTVA — SUCCESS PAGE
+===================================================== */
+
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--ink);
+  display:flex; justify-content:center; align-items:center;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+  color:#fff;
+  text-align:center;
+}
+
+.s-shape-1{ top:14%; left:12%; width:90px; height:90px; background:var(--gold); animation-duration:9s; }
+.s-shape-2{ bottom:12%; right:14%; width:56px; height:56px; background:var(--plum-light); animation-duration:7s; animation-delay:1s; }
+
+.logo-bg{
+  position:absolute; top:50%; left:50%; width:320px; height:320px;
+  border-radius:50%; transform:translate(-50%,-50%);
+  background:url('logo 1.jpeg') no-repeat center center / cover;
+  filter:drop-shadow(0 0 25px var(--gold)) blur(1px);
+  animation:rotateGlow 24s linear infinite;
+  opacity:0.14;
+}
+@keyframes rotateGlow{
+  0%{ transform:translate(-50%,-50%) rotate(0deg); }
+  100%{ transform:translate(-50%,-50%) rotate(360deg); }
+}
+
+.content{
+  position:relative; z-index:2;
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(233,191,22,0.25);
+  padding:44px 34px;
+  border-radius:var(--radius);
+  box-shadow:0 0 40px rgba(233,191,22,0.15);
+  animation:fadeInUp 1s ease;
+  max-width:440px;
+}
+
+h1{ font-family:var(--font-display); font-size:2.6em; color:var(--gold); margin-bottom:15px; }
+p{ font-size:1.1em; color:var(--text-muted-light); margin-bottom:30px; }
+
+.home-btn{
+  background:var(--gold); color:var(--ink); text-decoration:none;
+  padding:12px 28px; border-radius:999px; font-weight:700;
+  transition:transform .3s ease, box-shadow .3s ease;
+  box-shadow:0 0 12px rgba(233,191,22,0.4);
+  display:inline-block;
+}
+.home-btn:hover{ transform:scale(1.06); box-shadow:0 0 20px rgba(233,191,22,0.6); background:var(--gold-light); }
+
+@keyframes fadeInUp{
+  0%{ opacity:0; transform:translateY(40px); }
+  100%{ opacity:1; transform:translateY(0); }
+}
+
+@media (max-width: 600px){
+  .logo-bg{ width:200px; height:200px; }
+  h1{ font-size:2em; }
+  .content{ padding:28px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .content{ animation:none; }
+  .logo-bg{ animation:none; }
+}

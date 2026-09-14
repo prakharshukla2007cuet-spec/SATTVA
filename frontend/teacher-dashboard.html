@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Dashboard | SATTVA</title>
+  <script src="api.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="dash-header">
+    <a href="index.html" class="logo-container">
+      <img src="logo 1.jpeg" alt="SATTVA Logo">
+      <span class="logo-text">SATTVA</span>
+    </a>
+    <div class="user-chip">
+      <span class="role-pill" id="chipRole">teacher</span>
+      <span class="name" id="chipName">—</span>
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main class="dash-main">
+    <div class="dash-welcome">
+      <h1>Welcome back<span id="welcomeName"></span> 👋</h1>
+      <p>Here's your SATTVA instructor profile.</p>
+    </div>
+
+    <div id="dashContent">
+      <div class="dash-loading">Loading your dashboard…</div>
+    </div>
+
+    <div class="dash-card">
+      <h2>Gallery Uploads</h2>
+      <p style="color:var(--text-muted-light); margin-bottom:14px;">Share a photo or moment from your class in the public SATTVA gallery.</p>
+      <form class="edit-form" id="uploadForm">
+        <label>Title</label>
+        <input type="text" id="uploadTitle" placeholder="e.g. Kathak Workshop">
+        <label>Description</label>
+        <input type="text" id="uploadDescription" placeholder="A short caption">
+        <label>Image File</label>
+        <input type="file" id="uploadFile" accept="image/png,image/jpeg,image/gif,image/webp" required>
+        <button type="submit">Upload to Gallery</button>
+        <p id="uploadMsg" class="dash-loading" style="display:none;"></p>
+      </form>
+    </div>
+
+    <a href="index.html" class="back-home-link">← Back to SATTVA Home</a>
+  </main>
+
+  <script src="dashboard-common.js"></script>
+  <script src="teacher-dashboard.js"></script>
+</body>
+</html>
